@@ -1,0 +1,7 @@
+{
+  "name": "Cross-A3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
