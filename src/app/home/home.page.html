@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar color="primary">
+    <ion-title id="navbar-title">
+      Pizza App
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,90 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Pizza App</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="container" id="image-manager">
+    <img src="assets/pizza-logo.jpg" width="15%" />
+    <ion-button color="primary" [routerLink]="['/manager']">Manager</ion-button>
+  </div>
+  <div class="container" id="quantity-label-container">
+    <p>Quanity: {{selectedQuantity}} </p>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="container" id="number-grid">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(1)">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(2)">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(3)">3</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(4)">4</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(5)">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(6)">6</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(7)">7</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(8)">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(9)">9</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button size="large" (click)="resetQuantity()">Reset</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="updateQuantity(0)">0</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="large" (click)="addPizzaToOrder()">Add</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="list-container">
+    <div class="list">
+      <p>Toppings: {{selectedTopping.name}}</p>
+      <ion-list>
+        <ion-item *ngFor="let topping of toppings; let i = index" button (click)="selectTopping(topping)"
+          [ngStyle]="{background:'gray'}">
+          <ion-label>
+            {{topping.name}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="list">
+      <p>Sizes: {{selectedSize.name}}</p>
+      <ion-list>
+        <ion-item *ngFor="let size of sizes" button (click)="selectSize(size)">
+          <ion-label>
+            {{size.name}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
   </div>
 </ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="toolbar">
+      <ion-title>Previous Orders</ion-title>
+      <ion-button [routerLink]="['/manager']">Manager Page</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="list">
+    <ion-list>
+      <ion-item *ngFor="let order of orders;">
+        <ion-label text-wrap>
+          Price: {{order.price}} Date: {{order.timestamp.toDateString()}} {{order.timestamp.getHours()}}:{{order.timestamp.getMinutes()}}:{{order.timestamp.getSeconds()}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

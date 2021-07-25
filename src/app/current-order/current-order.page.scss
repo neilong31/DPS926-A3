@@ -1,0 +1,22 @@
+.toolbar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.list {
+  text-align: center;
+}

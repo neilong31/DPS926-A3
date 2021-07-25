@@ -1,0 +1,11 @@
+.button-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+ion-button{
+    width: 25em;
+}
